@@ -20,14 +20,14 @@ const create_contract = async (DATA) =>{
             }
         })
         .then((response) => {
-            return response;
+            return response.data;
         })
         .catch((error) => {
-            return error;
+            return error.response.data;
         });
 
         
-        return res.response.data;
+        return res;
 
     }
     catch(err)
