@@ -1,0 +1,28 @@
+{
+  "name": "vayupankh",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "homepage": "https://github.com/vayupankh/vayupankh-npm.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vayupankh/vayupankh-npm.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "github",
+    "repos",
+    "repositories",
+    "blockchain",
+    "ethereum",
+    "vayupankh",
+    "web3"
+  ],
+  "author": "Vayupankh Networks",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}
