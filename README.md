@@ -5,22 +5,22 @@
 ## Set-up
 
 1. Download the NPM module
-```
+```bash
 $ npm install vayupankh
 ```
 2. Require the package in your code.
-```
+```js
 const Vayupankh = require('vayupankh');
 ```
 3. Initialize with your [Vayupankh](https://vayupankh.io) auth key
-```
+```js
 const vayu = new Vayupankh("AuthKey",'AuthPin');
 ```
 
 ## Request
 You now have the create_contract via following methods.
 
-```
+```js
 vayu.create_contract(Tablename,Fields,Rpc,callback);
 ```
 
