@@ -4,7 +4,7 @@ const create_contract = async (DATA) =>{
     try{
         var request = ({
             "table_name": DATA.table,
-            "rpc_net": DATA.rpc,
+            "net": DATA.rpc,
             "contract_fields": DATA.fields.join("|")
         });
         var jsonData = JSON.stringify(request);
