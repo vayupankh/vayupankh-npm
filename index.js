@@ -23,7 +23,7 @@ class Vayupankh {
         return "https://vayu-api.com/0x/public-api/v1/index.php/";
     }
 
-    create_contract(table, fields, rpc, callback) {
+    createContract(table, fields, rpc, callback) {
             var request_params = ({
                 "table_name": table,
                 "net": rpc,
@@ -31,6 +31,23 @@ class Vayupankh {
             });
             var jsonData = JSON.stringify(request_params);
         return Vayupankh.doRequest('contract/create', jsonData, this.authKey, this.authPin, callback);
+    }
+
+    initIransaction(address, data, callback) {
+            var request_params = ({
+                "contract_address": address,
+                "contract_data": data.join("|")
+            });
+            var jsonData = JSON.stringify(request_params);
+        return Vayupankh.doRequest('transaction/init', jsonData, this.authKey, this.authPin, callback);
+    }
+
+    getTransaction(address, callback) {
+            var request_params = ({
+                "contract_address": address
+            });
+            var jsonData = JSON.stringify(request_params);
+        return Vayupankh.doRequest('transaction/get', jsonData, this.authKey, this.authPin, callback);
     }
 
 

@@ -6,7 +6,7 @@
 
 1. Download the NPM module
 ```bash
-$ npm install vayupankh
+$ npm install vayupankh@latest
 ```
 2. Require the package in your code.
 ```js
@@ -21,22 +21,54 @@ const vayu = new Vayupankh("AuthKey",'AuthPin');
 You now have the create_contract via following methods.
 
 ```js
-vayu.create_contract(Tablename,Fields,Rpc,callback);
+vayu.createContract(Tablename,Fields,Rpc,callback);
+vayu.initIransaction(contractAddress,data,callback);
+vayu.getTransaction(contractAddress,callback);
 ```
 
 
 ## Example
 Performing a create contract
 ```js
+
 var fields = ["FIELDS_ONE","FIELD_TWO","FIELDS_THREE"];
-vayu.create_contract("TableName",fields,"RPC", function (error,data){
-        if(error){
-            console.log(error);
-        }
-        else{
-            console.log(data);
-        }
-    });
-}
+vayu.createContract("TableName",fields,"RPC", function (error,data){
+    if(error){
+        console.log(error);
+    }
+    else{
+        console.log(data);
+    }
+});
+
+
+```
+Performing a transaction to contract
+```js
+
+var data = ["DATA1","DATA2","DATA3"];
+vayu.initIransaction("ContractAddress",data, function (error,data){
+    if(error){
+        console.log(error);
+    }
+    else{
+        console.log(data);
+    }
+});
+
+
+```
+getting list of transaction in contract
+```js
+
+vayu.getTransaction("ContractAddress", function (error,data){
+    if(error){
+        console.log(error);
+    }
+    else{
+        console.log(data);
+    }
+});
+
 
 ```
